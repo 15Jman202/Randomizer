@@ -7,14 +7,12 @@
 //
 
 import Foundation
-import CoreData
 
-class Person: NSManagedObject {
+class Person {
     
-    convenience init(name: String, context: NSManagedObjectContext = Stack.context) {
-        
-        self.init(context: context)
-        
+    var name: String
+    
+    init(name: String) {
         self.name = name
     }
 }

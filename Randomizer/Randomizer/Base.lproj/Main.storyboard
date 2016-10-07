@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Groups Table View Controller-->
         <scene sceneID="7GB-l6-fnL">
             <objects>
-                <tableViewController id="CGJ-Kg-ZW3" sceneMemberID="viewController">
+                <tableViewController id="CGJ-Kg-ZW3" customClass="GroupsTableViewController" customModule="Randomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PS2-jp-a9u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,6 +18,9 @@
                             <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Randomize"/>
+                            <connections>
+                                <action selector="addButtonTapped" destination="CGJ-Kg-ZW3" eventType="touchUpInside" id="VX6-ua-M6j"/>
+                            </connections>
                         </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" textLabel="akf-sP-n8o" style="IBUITableViewCellStyleDefault" id="sdF-QS-p8l">
@@ -44,7 +47,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="zpP-q2-foI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZHV-7p-S3A"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZHV-7p-S3A">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="CGJ-Kg-ZW3" id="HaZ-38-qJt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qC-tu-9Wr" userLabel="First Responder" sceneMemberID="firstResponder"/>
