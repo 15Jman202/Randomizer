@@ -22,14 +22,8 @@ class PersonController {
         UserDefaults.standard.set(person.dictionaryRep, forKey: kPerson)
     }
     
-    func delete(person: Person) {
-        UserDefaults.standard.removeObject(forKey: kPerson)
-    }
-    
     func loadFromPersistStore(){
         guard let people = UserDefaults.standard.object(forKey: kPerson) as? [[String: String]] else { return }
         self.people = people.flatMap { Person(dictionary: $0) }
     }
 }
-
-

@@ -23,8 +23,9 @@ class GroupsTableViewController: UITableViewController {
     }
     
     @IBAction func randomizeButtonTapped() {
-        guard let shuffledArray = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: PersonController.sharedController.people) as? [Person], shuffledArray.count != 0, shuffledArray.count != 1 else { return }
+        guard let shuffledArray = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: PersonController.sharedController.people) as? [Person] else { return }
         PersonController.sharedController.people = shuffledArray
+        tableView.reloadData()
     }
     
     
@@ -49,12 +50,13 @@ class GroupsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PersonController.sharedController.people.count
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-        let person = PersonController.sharedController.people[indexPath.row]
+        let index = (indexPath.section * 2) + indexPath.row
+        let person = PersonController.sharedController.people[index]
         
         cell.textLabel?.text = person.name
         
