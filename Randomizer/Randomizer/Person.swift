@@ -8,11 +8,26 @@
 
 import Foundation
 
-class Person {
+class Person: Equatable {
+    
+    private let kName = "Name"
+    
+    var dictionaryRep: [String: String] {
+        return [kName: name]
+    }
     
     var name: String
+    
+    init?(dictionary: [String: String]) {
+        guard let name = dictionary[kName] else { return nil }
+        self.name = name
+    }
     
     init(name: String) {
         self.name = name
     }
+}
+
+func ==(lhs: Person, rhs: Person) -> Bool {
+    return lhs.name == rhs.name
 }

@@ -11,12 +11,25 @@ import CoreData
 
 class PersonController {
     
+    var people: [Person] = []
+    
+    private let kPerson = "Person"
+    
     static let sharedController = PersonController()
     
-    var People: [Person]?
-    
-    func saveToPersistStore() {
-        
+    func add(person: Person) {
+        self.people.append(person)
+        UserDefaults.standard.set(person.dictionaryRep, forKey: kPerson)
     }
     
+    func delete(person: Person) {
+        UserDefaults.standard.removeObject(forKey: kPerson)
+    }
+    
+    func loadFromPersistStore(){
+        guard let people = UserDefaults.standard.object(forKey: kPerson) as? [[String: String]] else { return }
+        self.people = people.flatMap { Person(dictionary: $0) }
+    }
 }
+
+

@@ -19,7 +19,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Randomize"/>
                             <connections>
-                                <action selector="addButtonTapped" destination="CGJ-Kg-ZW3" eventType="touchUpInside" id="VX6-ua-M6j"/>
+                                <action selector="randomizeButtonTapped" destination="CGJ-Kg-ZW3" eventType="touchUpInside" id="EcR-TR-xc3"/>
                             </connections>
                         </button>
                         <prototypes>
