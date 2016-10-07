@@ -16,6 +16,7 @@
 		D05D12401DA7F7E400136060 /* People Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D123F1DA7F7E400136060 /* People Controller.swift */; };
 		D05D12431DA7F80200136060 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D12421DA7F80200136060 /* Stack.swift */; };
 		D05D12461DA7F91F00136060 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D05D12441DA7F91F00136060 /* Model.xcdatamodeld */; };
+		D05D124F1DA7FADD00136060 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D124D1DA7FADD00136060 /* Person+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D05D123F1DA7F7E400136060 /* People Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "People Controller.swift"; sourceTree = "<group>"; };
 		D05D12421DA7F80200136060 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		D05D12451DA7F91F00136060 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D05D124D1DA7FADD00136060 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				D05D12381DA7F78A00136060 /* Person.swift */,
+				D05D124D1DA7FADD00136060 /* Person+CoreDataProperties.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				D05D12391DA7F78A00136060 /* Person.swift in Sources */,
 				D05D12431DA7F80200136060 /* Stack.swift in Sources */,
 				D05D12271DA7F6BD00136060 /* AppDelegate.swift in Sources */,
+				D05D124F1DA7FADD00136060 /* Person+CoreDataProperties.swift in Sources */,
 				D05D123C1DA7F7CA00136060 /* GroupsTableViewController.swift in Sources */,
 				D05D12401DA7F7E400136060 /* People Controller.swift in Sources */,
 				D05D12461DA7F91F00136060 /* Model.xcdatamodeld in Sources */,
