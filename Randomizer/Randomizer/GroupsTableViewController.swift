@@ -32,27 +32,29 @@ class GroupsTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if PersonController.sharedController.people.count % 2 != 0 {
-            return "Unasigned"
-        } else {
+        if PersonController.sharedController.people.count % 2 == 0 {
             return "Team \(section + 1)"
+        } else {
+            return "Team unasigned"
         }
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         let count = PersonController.sharedController.people.count
         
-        if count % 2 == 0 {
+        if count % 2 == 1 {
+            return PersonController.sharedController.people.count / 2 + 1
+        } else if count % 2 == 0 {
             return PersonController.sharedController.people.count / 2
         } else {
             return 0
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
         let index = (indexPath.section * 2) + indexPath.row
@@ -87,4 +89,15 @@ class GroupsTableViewController: UITableViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            let index = (indexPath.section * 2) + indexPath.row
+//            let person = PersonController.sharedController.people[index]
+//            PersonController.sharedController.delete(person: person, index: index)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        }
+//    }
 }
+
+

@@ -19,7 +19,17 @@ class PersonController {
     
     func add(person: Person) {
         self.people.append(person)
-        UserDefaults.standard.set(person.dictionaryRep, forKey: kPerson)
+        saveToPersistStore()
+    }
+    
+    func delete(person: Person, index: Int) {
+        people.remove(at: index)
+        UserDefaults.standard.removeObject(forKey: kPerson)
+    }
+    
+    func saveToPersistStore() {
+        let dictionaryArray = people.map { $0.dictionaryRep }
+        UserDefaults.standard.set(dictionaryArray, forKey: kPerson)
     }
     
     func loadFromPersistStore(){
